@@ -1,0 +1,184 @@
+# ===========================
+# Terraform Files (All Chapters)
+# ===========================
+
+# Local .terraform directories in any chapter/listing
+**/.terraform/*
+**/terraform.tfstate.d/*
+
+# .tfstate files - NEVER commit these (contain sensitive data)
+# This pattern catches state files in all subdirectories
+**/*.tfstate
+**/*.tfstate.*
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+**/crash.log
+**/crash.*.log
+crash.log
+crash.*.log
+
+# Exclude all .tfvars files, which may contain sensitive data
+# This pattern catches tfvars in all chapter directories
+**/*.tfvars
+**/*.tfvars.json
+*.tfvars
+*.tfvars.json
+
+# Keep example tfvars files for reference (uncomment if needed)
+# !**/*.tfvars.example
+# !**/terraform.tfvars.example
+
+# Ignore override files as they are usually used to override resources locally
+**/override.tf
+**/override.tf.json
+**/*_override.tf
+**/*_override.tf.json
+
+# Ignore transient lock info files created by terraform apply
+**/.terraform.tfstate.lock.info
+.terraform.tfstate.lock.info
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Ignore plan files in all directories
+**/*.tfplan
+**/*.tfplan.json
+*.tfplan
+*.tfplan.json
+
+# Ignore any backup files
+**/*.backup
+**/*.bak
+**/*.orig
+*.backup
+*.bak
+*.orig
+
+# Ignore directory for test binaries
+.test
+**/.test
+
+# Ignore log files in all directories
+**/*.log
+*.log
+
+# Ignore SSH keys in any chapter
+**/*.pem
+**/*.key
+**/*.pub
+*.pem
+*.key
+*.pub
+
+# Terraform lock files (choose one approach)
+# Option 1: Ignore lock files (uncomment if you want different versions per chapter)
+**/.terraform.lock.hcl
+
+# Option 2: Keep lock files (uncomment to track provider versions)
+# !**/.terraform.lock.hcl
+
+
+# ===========================
+# IDE and Editor Files
+# ===========================
+
+## VS Code
+.vscode/
+**/.vscode/
+*.code-workspace
+
+## IntelliJ IDEA
+.idea/
+**/.idea/
+*.iml
+*.iws
+*.ipr
+
+## Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+## Vim
+*.swp
+*.swo
+*~
+.vim/
+**/.vim/
+
+## Emacs
+*~
+\#*\#
+.\#*
+
+# ===========================
+# OS Specific Files
+# ===========================
+
+## macOS
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+## Windows
+Thumbs.db
+**/Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+**/Desktop.ini
+
+## Linux
+*~
+.directory
+.Trash-*
+
+# ===========================
+# Environment & Local Files
+# ===========================
+
+# Ignore any local environment files in all chapters
+**/.env
+**/.env.local
+**/.envrc
+.env
+.env.local
+.envrc
+
+# Ignore local testing directories
+**/tmp/
+**/temp/
+tmp/
+temp/
+**/*.tmp
+*.tmp
+
+# ===========================
+# Documentation & Misc
+# ===========================
+
+# Ignore auto-generated documentation
+**/*.md.backup
+*.md.backup
+
+# Personal notes (optional - uncomment if you keep notes)
+# **/NOTES.md
+# **/TODO.md
+
+# ===========================
+# Chapter-Specific (Optional)
+# ===========================
+
+# If you want to ignore entire chapters during development
+# /chapter1/
+# /chapter2/
+
+# Ignore any local testing outputs
+**/output/
+**/outputs/
