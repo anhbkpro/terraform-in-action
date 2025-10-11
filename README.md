@@ -64,3 +64,52 @@ graph TD
     style UpdateState fill:#f3e5f5
     style Destroy fill:#ffebee
 ```
+
+# Steps that Terraform performs when generating an execution plan for an update
+```mermaid
+graph TD
+    Start([Start]) --> ReadConfig[Read configuration]
+    ReadConfig -.-> MainTF[main.tf]
+
+    ReadConfig --> ReadState[Read state]
+    ReadState -.-> StateTF[terraform.tfstate]
+
+    ReadState --> ForEach[For each resource]
+
+    ForEach --> InState{Resource in state?}
+
+    InState -->|Yes| Read[Read]
+    InState -->|No| Create[Create]
+
+    Read --> HasChanges{Has changes?}
+
+    HasChanges -->|Yes| IsDestroy{Is destroy plan?}
+    HasChanges -->|No| NoOp[No-op]
+
+    IsDestroy -->|Yes| Delete[Delete]
+    IsDestroy -->|No| Update[Update]
+
+    Create --> OutputPlan[Output plan]
+    NoOp --> OutputPlan
+    Update --> OutputPlan
+    Delete --> OutputPlan
+
+    OutputPlan --> End([End])
+
+    style Start fill:#4a4a4a,stroke:#333,color:#fff
+    style End fill:#4a4a4a,stroke:#333,color:#fff
+    style ReadConfig fill:#b8d4b8,stroke:#333
+    style ReadState fill:#b8d4b8,stroke:#333
+    style ForEach fill:#b8d4b8,stroke:#333
+    style InState fill:#b8d4b8,stroke:#333
+    style Read fill:#b8d4b8,stroke:#333
+    style HasChanges fill:#b8d4b8,stroke:#333
+    style IsDestroy fill:#b8d4b8,stroke:#333
+    style Create fill:#d4d4d4,stroke:#333
+    style NoOp fill:#d4d4d4,stroke:#333
+    style Update fill:#b8d4b8,stroke:#333
+    style Delete fill:#d4d4d4,stroke:#333
+    style OutputPlan fill:#b8d4b8,stroke:#333
+    style MainTF fill:#fff,stroke:#333
+    style StateTF fill:#fff,stroke:#333
+```
