@@ -21,10 +21,10 @@ crash.*.log
 
 # Exclude all .tfvars files, which may contain sensitive data
 # This pattern catches tfvars in all chapter directories
-**/*.tfvars
-**/*.tfvars.json
-*.tfvars
-*.tfvars.json
+# **/*.tfvars
+# **/*.tfvars.json
+# *.tfvars
+# *.tfvars.json
 
 # Keep example tfvars files for reference (uncomment if needed)
 # !**/*.tfvars.example
