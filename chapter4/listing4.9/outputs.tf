@@ -1,4 +1,4 @@
-# Outputs for networking module
+# Outputs of the networking module
 
 output "vpc" {
   value = module.vpc

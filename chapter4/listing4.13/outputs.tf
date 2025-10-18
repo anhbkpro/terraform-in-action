@@ -1,4 +1,4 @@
-# Outputs for database configuration details
+# Outputs of the database module
 output "db_config" {
   value = {
     user = aws_db_instance.database.username
