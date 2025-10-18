@@ -1,3 +1,5 @@
+# main.tf from the root module
+
 module "autoscaling" {
   source = "./modules/autoscaling"
   namespace = var.namespace
