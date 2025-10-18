@@ -1,3 +1,5 @@
+# Outputs from root
+
 output "db_password" {
   value = "tbd"
 }
