@@ -25,7 +25,7 @@ module "lb_sg" {
   }]
 }
 
-module "websrv_sg" {
+module "websvr_sg" {
   source = "terraform-in-action/sg/aws"
   vpc_id = module.vpc.vpc_id
   ingress_rules = [
@@ -45,6 +45,6 @@ module "rds_sg" {
   vpc_id = module.vpc.vpc_id
   ingress_rules = [{
     port        = 3306
-    security_groups = [module.websrv_sg.security_group.id]
+    security_groups = [module.websvr_sg.security_group.id]
   }]
 }
