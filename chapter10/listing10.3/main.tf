@@ -10,7 +10,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-
 resource "local_file" "credentials" {
   filename           = "credentials"
   file_permission    = "0644"
